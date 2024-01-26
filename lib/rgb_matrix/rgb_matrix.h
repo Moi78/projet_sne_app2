@@ -49,16 +49,24 @@ namespace Matrix {
     class RgbMatrix {
     public:
         RgbMatrix(I2C *com_driver);
+        ~RgbMatrix() = default;
 
-        ~RgbMatrix();
-
+        // Ecrit un pixel dans le framebuffer de la matrice LED et met a jour la matrice
         void write_pixel(const Pixel &pxl);
+
+        // Idem que write_pixel mais ne rafraichis pas la matrice
         void write_pixel_noblit(const Pixel &pxl);
 
+        // Affiche une fonctionnalite integree a la matrice
         void display_builtin(I2cBuiltins builtin, Color color, uint8_t index);
+
+        // Permet d'afficher une couleur sur toute la matrice
         void color_block(uint32_t rgb);
 
+        // Remplace l'entierete du contenu du framebuffer
         void write_image(const std::array<Color, MatrixCfg::matrix_h * MatrixCfg::matrix_w> &image);
+
+        // Met a jour la matrice led
         void blit();
 
     private:

@@ -1,3 +1,10 @@
 # Demo SNE APP2
 
-La source du programme est dans le dossier `src/` et la source des drivers est dans le dossier `lib/`. Adafruit_GFX N'A PAS ÉTÉ écrite par moi, seulement légèrement modifié. Les drivers sont fortement inspirés du code fournis par GROVE. `lib/nils_lib` contient les drivers écrits par Nils.
+### Arborescence
+
+- `src/` : Source du firmware
+- `soft_pc/` : Source du logiciel côté PC qui drive le port série et envoie la capture de l'écran
+- `lib/` : Drivers
+  - `Adafruit_GFX` : Driver d'adafruit porté pour Mbed et légèrement adapté pour fonctionner avec notre ecran
+  - `nils_lib` : Drivers écrits par Nils
+  - `rgb_matrix` : Driver de la matrice RGB

@@ -14,10 +14,6 @@ namespace Matrix {
         }
     }
 
-    RgbMatrix::~RgbMatrix() {
-
-    }
-
     void RgbMatrix::write_pixel(const Pixel &pxl) {
         m_fbo[pxl.coord.x + pxl.coord.y * MatrixCfg::matrix_w] = pxl.color;
         write_image(m_fbo);
